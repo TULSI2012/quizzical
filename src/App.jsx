@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { decode } from 'html-entities'
+import Results from './Components/Results'
+import Title from './Components/Title'
 
 function App() {
 
@@ -9,6 +11,8 @@ function App() {
   const [questionData, setQuestionData] = useState([])
   const [questionNum, setQuestionNum] = useState(0)
   const [playerSelected, setPlayerSelected] = useState("")
+  const [isQuizFinished, setIsQuizFinished] = useState(false)
+  const [startQuiz, setStartQuiz] = useState(false)
   const [score, setScore] = useState(0)
 
   function nextQuestion() {
@@ -22,8 +26,12 @@ function App() {
       setQuestionNum(prevNum => prevNum + 1)
     }
     else {
-      alert("End of Quiz")
+      setIsQuizFinished(true)
     }
+  }
+
+  function handleStartQuiz() {
+    setStartQuiz(true)
   }
 
   useEffect(() => {
@@ -40,34 +48,43 @@ function App() {
       })))
   },[])
 
-  console.log(playerSelected)
-
   return (
     <div>
-      {questionData[0] != null && 
-        <div>
-          <h2>
-            {questionData[questionNum].question}
-          </h2>
-          <div className='flex flex-col'>
-            {/* Render a button for each answer in the answersArray */}
-            {questionData[questionNum].answerArray.map(answer => {
-              return <button
-                        key={answer} 
-                        onClick={(e) => setPlayerSelected(e.target.textContent)} 
-                        className='bg-violet-200 w-1/2 mt-2 mx-auto hover:bg-violet-400 focus:bg-violet-500'>
-                          {decode(answer)}
-                      </button>
-            })}
-          </div>
-          <div>
-            <button
-              onClick={nextQuestion} 
-              className='bg-teal-300 hover:bg-teal-400'>
-              Next Question
-            </button>
-          </div>
-        </div>
+      {!startQuiz ? <Title begin={handleStartQuiz}/> : 
+      <>
+        {/* If isQuizFinished is not true, start the quiz and render the 1st question */}
+        {!isQuizFinished ?
+          <>
+            {questionData[0] != null && 
+              <div>
+                <h2>
+                  {questionData[questionNum].question}
+                </h2>
+                <div className='flex flex-col'>
+                  {/* Render a button for each answer in the answersArray */}
+                  {questionData[questionNum].answerArray.map(answer => {
+                    return <button
+                              key={answer} 
+                              onClick={(e) => setPlayerSelected(e.target.textContent)} 
+                              className='bg-violet-200 w-1/2 mt-2 mx-auto hover:bg-violet-400 focus:bg-violet-500'>
+                                {decode(answer)}
+                            </button>
+                  })}
+                </div>
+                <div>
+                  <button
+                    onClick={nextQuestion} 
+                    className='bg-teal-300 hover:bg-teal-400'>
+                    Next Question
+                  </button>
+                </div>
+              </div>
+            }
+          </>
+        : 
+          <Results score={score}/>
+        }
+      </>
       }
     </div>
   )

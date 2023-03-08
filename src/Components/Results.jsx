@@ -1,16 +1,30 @@
 import React from "react";
 
-export default function Results(props) {
+export default function Results({ score }) {
+
+    function getMedalImg(score) {
+        if (score === 10) {
+            return '/gold.png'
+        } else if (score >= 7) {
+            return '/silver.png'
+        } else if (score <= 6) {
+            return '/bronze.png'
+        }
+    }
+
     return (
         <div className="flex flex-col py-4 items-center justify-center bg-violet-50 rounded-xl max-w-lg shadow-xl w-[90%]">
             <div className="w-1/3">
-                <img src="/gold.png" alt="congats medal" />
+                <img 
+                    src={getMedalImg(score)}
+                    alt="congats medal" 
+                />
             </div>
             <h2 className="text-violet-500 font-semibold text-4xl max-w-md">
                 Congratulations!
             </h2>
             <p className="mt-4 bg-violet-200 text-violet-500 font-semibold rounded-3xl px-4 py-2">
-                You scored {props.score} out of 10
+                You scored {score} out of 10
             </p>
             <div className="flex gap-x-4">
                 <button

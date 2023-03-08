@@ -5,3 +5,8 @@
 * {
   box-sizing: border-box;
 }
+
+.background-image {
+  background: url(/geometry.png);
+  background-color: rgb(139 92 246);
+}

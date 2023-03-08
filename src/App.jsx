@@ -56,7 +56,7 @@ function App() {
   },[])
 
   return (
-    <div className='bg-violet-500 h-screen flex flex-col justify-center'>
+    <div className='background-image h-screen flex flex-col justify-center items-center'>
       {!startQuiz ? <Title begin={handleStartQuiz}/> : 
       <>
         {/* If isQuizFinished is not true, start the quiz and render the 1st question */}
@@ -67,7 +67,8 @@ function App() {
                   question={questionData[questionNum].question}
                   answers={questionData[questionNum].answerArray}
                   next={nextQuestion}
-                  playersChoice={playersChoice}/>
+                  playersChoice={playersChoice}
+                  questionNum={questionNum}/>
             }
           </>
         : 

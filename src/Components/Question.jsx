@@ -3,7 +3,7 @@ import { decode } from 'html-entities'
 
 export default function Question({ question, answers, next, playersChoice, questionNum}) {
     return (
-        <div className="flex flex-col px-4 py-4 items-center justify-center bg-violet-100 mx-4 rounded-xl max-w-lg shadow-xl h-80vh">
+        <div className="flex flex-col px-4 items-center justify-center bg-violet-50 mx-4 py-4 rounded-xl w-[95%] max-w-lg shadow-xl">
             <p className="text-violet-400 font-semibold text-lg mb-4 w-full max-w-md">
                 Question {questionNum + 1}<span className="text-violet-300 text-sm ml-1">/10</span>
             </p>

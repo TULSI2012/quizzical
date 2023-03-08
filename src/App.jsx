@@ -2,11 +2,12 @@ import React, { useState, useEffect } from 'react'
 import { decode } from 'html-entities'
 import Results from './Components/Results'
 import Title from './Components/Title'
+import Question from './Components/Question'
 
 function App() {
 
   //5 question, general knowledge, any difficulty
-  const API = "https://opentdb.com/api.php?amount=5&category=9&type=multiple"
+  const API = "https://opentdb.com/api.php?amount=10&category=9&type=multiple"
   
   const [questionData, setQuestionData] = useState([])
   const [questionNum, setQuestionNum] = useState(0)
@@ -16,12 +17,11 @@ function App() {
   const [score, setScore] = useState(0)
 
   function nextQuestion() {
-    {/* Check if players choice is equal to the correct answer, increment score if true */}
+    //Check if players choice is equal to the correct answer, increment score if true
     if(playerSelected == questionData[questionNum].correctAnswer) {
       setScore(prevScore => prevScore + 1)
     }
-    
-    {/* Increment through the questionData array when button pressed*/}
+    //Increment through the questionData array when button pressed
     if(questionNum < questionData.length - 1) {
       setQuestionNum(prevNum => prevNum + 1)
     }
@@ -30,10 +30,17 @@ function App() {
     }
   }
 
+  //Passed down to Title component as props
   function handleStartQuiz() {
     setStartQuiz(true)
   }
 
+  //Passed down to QUestion component as props
+  function playersChoice(e) {
+    setPlayerSelected(e.target.textContent)
+  }
+
+  //initial API call on first page render
   useEffect(() => {
     fetch(API)
       .then(res => res.json())
@@ -49,36 +56,18 @@ function App() {
   },[])
 
   return (
-    <div>
+    <div className='bg-violet-500 h-screen flex flex-col justify-center'>
       {!startQuiz ? <Title begin={handleStartQuiz}/> : 
       <>
         {/* If isQuizFinished is not true, start the quiz and render the 1st question */}
         {!isQuizFinished ?
           <>
             {questionData[0] != null && 
-              <div>
-                <h2>
-                  {questionData[questionNum].question}
-                </h2>
-                <div className='flex flex-col'>
-                  {/* Render a button for each answer in the answersArray */}
-                  {questionData[questionNum].answerArray.map(answer => {
-                    return <button
-                              key={answer} 
-                              onClick={(e) => setPlayerSelected(e.target.textContent)} 
-                              className='bg-violet-200 w-1/2 mt-2 mx-auto hover:bg-violet-400 focus:bg-violet-500'>
-                                {decode(answer)}
-                            </button>
-                  })}
-                </div>
-                <div>
-                  <button
-                    onClick={nextQuestion} 
-                    className='bg-teal-300 hover:bg-teal-400'>
-                    Next Question
-                  </button>
-                </div>
-              </div>
+                <Question 
+                  question={questionData[questionNum].question}
+                  answers={questionData[questionNum].answerArray}
+                  next={nextQuestion}
+                  playersChoice={playersChoice}/>
             }
           </>
         : 

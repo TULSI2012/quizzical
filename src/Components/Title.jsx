@@ -7,7 +7,7 @@ import { FaGlobeAmericas } from 'react-icons/fa'
 export default function Title({ handleStartQuiz, handleCategory, handleDifficulty, category }) {
     return (
         <div className="flex flex-col px-4 items-center justify-center bg-violet-50 mx-4 py-4 rounded-xl w-[95%] max-w-lg shadow-xl">
-            <h1 className="text-violet-500 text-6xl font-semibold mb-6">
+            <h1 className="text-violet-500 text-6xl font-semibold mb-6 font-title">
                 Quizzical
             </h1>
             <h2 className="text-violet-500 text-2xl font-semibold mb-2">

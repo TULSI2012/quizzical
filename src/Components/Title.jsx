@@ -13,7 +13,7 @@ export default function Title({ handleStartQuiz, handleCategory, handleDifficult
             <h2 className="text-violet-500 text-2xl font-semibold mb-2">
                 Select a Category
             </h2>
-            <div className="flex flex-wrap full items-center justify-center gap-6 mb-6">
+            <div className="flex flex-wrap items-center justify-center gap-6 mb-6 sm:w-3/4">
 
                 <div 
                     onClick={() => handleCategory("21")}

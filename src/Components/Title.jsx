@@ -4,7 +4,7 @@ import { GiEgyptianSphinx } from 'react-icons/gi'
 import { BiCameraMovie } from 'react-icons/bi'
 import { FaGlobeAmericas } from 'react-icons/fa'
 
-export default function Title({ begin, handleCategory, handleDifficulty, category }) {
+export default function Title({ handleStartQuiz, handleCategory, handleDifficulty, category }) {
     return (
         <div className="flex flex-col px-4 items-center justify-center bg-violet-50 mx-4 py-4 rounded-xl w-[95%] max-w-lg shadow-xl">
             <h1 className="text-violet-500 text-6xl font-semibold mb-6">
@@ -13,7 +13,7 @@ export default function Title({ begin, handleCategory, handleDifficulty, categor
             <h2 className="text-violet-500 text-2xl font-semibold mb-2">
                 Select a Category
             </h2>
-            <div className="flex flex-wrap w-3/4 items-center justify-center gap-6 mb-6">
+            <div className="flex flex-wrap full items-center justify-center gap-6 mb-6">
 
                 <div 
                     onClick={() => handleCategory("21")}
@@ -95,7 +95,7 @@ export default function Title({ begin, handleCategory, handleDifficulty, categor
             </div>
 
             <button 
-                onClick={() => begin()}
+                onClick={() => handleStartQuiz()}
                 className="bg-violet-100 text-violet-700 font-semibold rounded-md text-xl px-4 py-1 mt-4 shadow-md hover:bg-pink-400 hover:text-white transition-all hover:-translate-y-1 duration-200">
                 Start Quiz
             </button>

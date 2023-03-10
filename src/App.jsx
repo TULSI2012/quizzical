@@ -45,7 +45,11 @@ function App() {
 
   //Passed down to Title component as props
   function handleStartQuiz() {
-    setStartQuiz(true)
+    if (category && difficulty) {
+        setStartQuiz(true)
+    } else {
+      alert("please select a category and difficulty")
+    }
   }
 
   //Passed down to QUestion component as props
@@ -71,7 +75,7 @@ function App() {
   return (
     <div className='background-image h-screen flex flex-col justify-center items-center'>
       {!startQuiz ? <Title 
-                        begin={handleStartQuiz}
+                        handleStartQuiz={handleStartQuiz}
                         handleCategory={handleCategory}
                         handleDifficulty={handleDifficulty}
                         category={category}/> : 

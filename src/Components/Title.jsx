@@ -19,12 +19,12 @@ export default function Title({ handleStartQuiz, handleCategory, handleDifficult
                     onClick={() => handleCategory("21")}
                     className={`flex flex-col items-center rounded-lg w-32 py-4 shadow-md group hover:bg-pink-400 cursor-pointer transition-all duration-200 ${category === "21" ? 'bg-pink-400' : "bg-violet-100"}`}>
                     <div className={`bg-violet-50 rounded-xl w-12 h-12 flex items-center justify-center shadow-md mb-2 group-hover:bg-violet-50/25 ${category === "21" ? 'bg-violet-50/25' : ""}`}>
-                        <MdOutlineSportsSoccer className={`text-violet-600 text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "21" ? 'text-violet-50' : ""}`}/>
+                        <MdOutlineSportsSoccer className={`text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "21" ? 'text-violet-50' : "text-violet-600"}`}/>
                     </div>
-                    <h2 className={`text-violet-600 font-semibold group-hover:text-violet-50 ${category === "21" ? 'text-violet-50' : ""}`}>
+                    <h2 className={`font-semibold group-hover:text-violet-50 ${category === "21" ? 'text-violet-50' : "text-violet-600"}`}>
                         Sports
                     </h2>
-                    <p className={`text-violet-400 text-xs group-hover:text-violet-50 ${category === "21" ? 'text-violet-50' : ""}`}>
+                    <p className={`text-xs group-hover:text-violet-50 ${category === "21" ? 'text-violet-50' : "text-violet-400"}`}>
                         10 Questions
                     </p>
                 </div>
@@ -33,12 +33,12 @@ export default function Title({ handleStartQuiz, handleCategory, handleDifficult
                     onClick={() => handleCategory("23")}
                     className={`flex flex-col items-center rounded-lg w-32 py-4 shadow-md group hover:bg-pink-400 cursor-pointer transition-all duration-200 ${category === "23" ? 'bg-pink-400' : "bg-violet-100"}`}>
                     <div className={`bg-violet-50 rounded-xl w-12 h-12 flex items-center justify-center shadow-md mb-2 group-hover:bg-violet-50/25 ${category === "23" ? 'bg-violet-50/25' : ""}`}>
-                        <GiEgyptianSphinx className={`text-violet-600 text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "23" ? 'text-violet-50' : ""}`}/>
+                        <GiEgyptianSphinx className={`text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "23" ? 'text-violet-50' : "text-violet-600"}`}/>
                     </div>
-                    <h2 className={`text-violet-600 font-semibold group-hover:text-violet-50 ${category === "23" ? 'text-violet-50' : ""}`}>
+                    <h2 className={`font-semibold group-hover:text-violet-50 ${category === "23" ? 'text-violet-50' : "text-violet-600"}`}>
                         History
                     </h2>
-                    <p className={`text-violet-400 text-xs group-hover:text-violet-50 ${category === "23" ? 'text-violet-50' : ""}`}>
+                    <p className={`text-xs group-hover:text-violet-50 ${category === "23" ? 'text-violet-50' : "text-violet-400"}`}>
                         10 Questions
                     </p>
                 </div>
@@ -47,12 +47,12 @@ export default function Title({ handleStartQuiz, handleCategory, handleDifficult
                     onClick={() => handleCategory("11")}
                     className={`flex flex-col items-center rounded-lg w-32 py-4 shadow-md group hover:bg-pink-400 cursor-pointer transition-all duration-200 ${category === "11" ? 'bg-pink-400' : "bg-violet-100"}`}>
                     <div className={`bg-violet-50 rounded-xl w-12 h-12 flex items-center justify-center shadow-md mb-2 group-hover:bg-violet-50/25 ${category === "11" ? 'bg-violet-50/25' : ""}`}>
-                        <BiCameraMovie className={`text-violet-600 text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "11" ? 'text-violet-50' : ""}`}/>
+                        <BiCameraMovie className={`text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "11" ? 'text-violet-50' : "text-violet-600"}`}/>
                     </div>
-                    <h2 className={`text-violet-600 font-semibold group-hover:text-violet-50 ${category === "11" ? 'text-violet-50' : ""}`}>
+                    <h2 className={`font-semibold group-hover:text-violet-50 ${category === "11" ? 'text-violet-50' : "text-violet-600"}`}>
                         Film
                     </h2>
-                    <p className={`text-violet-400 text-xs group-hover:text-violet-50 ${category === "11" ? 'text-violet-50' : ""}`}>
+                    <p className={` text-xs group-hover:text-violet-50 ${category === "11" ? 'text-violet-50' : "text-violet-400"}`}>
                         10 Questions
                     </p>
                 </div>
@@ -61,12 +61,12 @@ export default function Title({ handleStartQuiz, handleCategory, handleDifficult
                     onClick={() => handleCategory("22")}
                     className={`flex flex-col items-center rounded-lg w-32 py-4 shadow-md group hover:bg-pink-400 cursor-pointer transition-all duration-200 ${category === "22" ? 'bg-pink-400' : "bg-violet-100"}`}>
                     <div className={`bg-violet-50 rounded-xl w-12 h-12 flex items-center justify-center shadow-md mb-2 group-hover:bg-violet-50/25 ${category === "22" ? 'bg-violet-50/25' : ""}`}>
-                        <FaGlobeAmericas className={`text-violet-600 text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "22" ? 'text-violet-50' : ""}`}/>
+                        <FaGlobeAmericas className={`text-4xl group-hover:text-violet-50 group-hover:animate-wiggle ${category === "22" ? 'text-violet-50' : "text-violet-600"}`}/>
                     </div>
-                    <h2 className={`text-violet-600 font-semibold group-hover:text-violet-50 ${category === "22" ? 'text-violet-50' : ""}`}>
+                    <h2 className={`font-semibold group-hover:text-violet-50 ${category === "22" ? 'text-violet-50' : "text-violet-600"}`}>
                         Geography
                     </h2>
-                    <p className={`text-violet-400 text-xs group-hover:text-violet-50 ${category === "22" ? 'text-violet-50' : ""}`}>
+                    <p className={`ext-xs group-hover:text-violet-50 ${category === "22" ? 'text-violet-50' : "text-violet-400"}`}>
                         10 Questions
                     </p>
                 </div>

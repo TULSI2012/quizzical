@@ -43,6 +43,5 @@ The API url was also set as a template string that would take in these state var
 
 ## Author
 
-- Website - [James McGrory](https://jamesmcgrory.dev/)
-- Twitter - [@JomersDev](https://twitter.com/JomersDev)
+- Tulsi Kalola
 

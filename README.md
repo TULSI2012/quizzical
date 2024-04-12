@@ -1,6 +1,6 @@
 # Quizzical - A multiple choice trivia game
 
-Live Site URL: [https://quizzical-jamesm.netlify.app/](https://quizzical-jamesm.netlify.app/)
+Live Site URL: [https://quizzbizz.netlify.app/](https://quizzbizz.netlify.app/)
 
 ## Overview
 
